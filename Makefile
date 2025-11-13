@@ -6,7 +6,7 @@ runtime-image: Dockerfile.runtime
 build:
 	docker run --platform linux/amd64 -it -v .:/opt/clambda clambda/build1
 
-bootstrap: clambda.c json.c json.h
+bootstrap: clambda.c clambda.h json.h
 	cc -o bootstrap clambda.c $$(curl-config --libs) -ldl
 
 clean:
