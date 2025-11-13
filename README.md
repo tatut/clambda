@@ -24,7 +24,14 @@ Once you have built the bootstrap and your handler (`bootstrap` and some `handle
 Steps:
 * Make sure they have execute bits (`chmod 755`)
 * Zip it `zip mylambda.zip bootstrap handler.o` (use `-X` on Mac to discard extended attributes)
-* Deploy using AWS cli: `aws lambda create-function --function-name mylambda \
---zip-file fileb://mylambda.zip --handler handler.handler_fn_name --runtime provided.al2023 \
---role arn:aws:iam::$MY_ACCOUNT_ID:role/lambda-role`
-* Invoke using AWS cli: `aws lambda invoke --function-name mylambda --payload '{"text":"Hello"}' response.txt --cli-binary-format raw-in-base64-out`
+* Deploy using AWS cli: ```
+aws lambda create-function --function-name mylambda \
+                           --zip-file fileb://mylambda.zip \
+                           --handler handler.handler_fn_name \
+                           --runtime provided.al2023 \
+                           --role arn:aws:iam::$MY_ACCOUNT_ID:role/lambda-role```
+
+* Invoke using AWS cli: ```
+aws lambda invoke --function-name mylambda \
+                  --payload '{"text":"Hello"}' response.txt \
+                  --cli-binary-format raw-in-base64-out```
