@@ -13,7 +13,7 @@ This is a custom AWS Lambda runtime for C.
 * Build image and bootstrap: `make build-image build`
 * Build a handler: `./build-handler.sh example`
 
-To test locally:, build and run the runtime-image:
+To test locally:
 * Build runtime image: `make runtime-image`
 * Run a handler: `docker run -p 8080:8080 -t clambda/runtime example.analyze_line`
 * call via cURL: `curl http://localhost:8080/2015-03-31/functions/function/invocations -d '{"id": "viiva", "points":[{"x": 10, "y": 10}, {"y":20, "x": 100}, {"x": 200, "y": 222}]}'`
