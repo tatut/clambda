@@ -186,6 +186,7 @@ int main(int argc, char **argv) {
       size_t out_size = 0;
       inv.out = open_memstream(&out_buf, &out_size);
       inv.user_data = h.user_data;
+      inv.response_type = JSON;
       if (h.handle(&inv)) {
         fflush(inv.out);
         send_response(&inv, out_buf, out_size);
