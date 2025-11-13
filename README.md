@@ -2,6 +2,12 @@
 
 This is a custom AWS Lambda runtime for C.
 
+**Why?** Because C gives us tiny fast starting and fast running binaries.
+
+**Beware** you are possibly exposing C code to the world, don't make any mistakes!
+
+
+
 ## Quickstart
 
 * Build image and bootstrap: `make build-image build`
